@@ -2,6 +2,24 @@
 
 Safe, idiomatic Rust bindings for the [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM) C API.
 
+## Quick Start
+
+```bash
+# 1. Clone and build LiteRT-LM C library
+git clone https://github.com/google-ai-edge/LiteRT-LM
+cd LiteRT-LM
+bazel build //c:engine
+
+# 2. Clone this repo
+cd ..
+git clone https://github.com/maceip/litert-lm-rs
+cd litert-lm-rs
+
+# 3. Build and run example
+export LD_LIBRARY_PATH=../LiteRT-LM/bazel-bin/c:$LD_LIBRARY_PATH
+cargo run --example simple_chat model.tflite
+```
+
 ## About
 
 LiteRT-LM is Google's lightweight runtime for on-device large language models. This crate provides Rust bindings that allow you to use LiteRT-LM from Rust applications with a safe, ergonomic API.
