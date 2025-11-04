@@ -1,0 +1,40 @@
+[package]
+name = "litert-lm-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["LiteRT-LM Contributors"]
+description = "Rust bindings for LiteRT-LM C API - Engine, Session, and Conversation support"
+license = "Apache-2.0"
+repository = "https://github.com/google-ai-edge/LiteRT-LM"
+
+[lib]
+name = "litert_lm"
+path = "src/lib.rs"
+crate-type = ["lib", "staticlib", "cdylib"]
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.70"
+
+[dev-dependencies]
+
+[features]
+default = []
+
+# Link instructions for using this library:
+#
+# 1. Build the C API library first:
+#    bazel build //c:engine
+#
+# 2. The build.rs will automatically:
+#    - Run bindgen to generate FFI bindings from c/engine.h
+#    - Link against bazel-bin/c/libengine.so
+#
+# 3. Build the Rust wrapper:
+#    cargo build --release
+#
+# Usage in other Rust projects:
+# Add to your Cargo.toml:
+# [dependencies]
+# litert-lm = { path = "../litert-lm/rust" }

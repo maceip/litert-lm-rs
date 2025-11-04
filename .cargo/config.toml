@@ -1,0 +1,24 @@
+# Cargo configuration for LiteRT-LM Rust wrapper
+#
+# This file contains build configuration for linking against the C API library.
+# You may need to update the paths below based on your build setup.
+
+[build]
+# Uncomment and set the path to your C API library directory
+# rustflags = ["-L", "/path/to/bazel-bin/c_api"]
+
+[target.x86_64-unknown-linux-gnu]
+# Example: Add library search path for Linux x86_64
+# rustflags = ["-L", "/home/user/LiteRT-LM/bazel-bin/c_api"]
+
+[target.aarch64-unknown-linux-gnu]
+# Example: Add library search path for Linux ARM64
+# rustflags = ["-L", "/home/user/LiteRT-LM/bazel-bin/c_api"]
+
+[target.x86_64-apple-darwin]
+# Example: Add library search path for macOS x86_64
+# rustflags = ["-L", "/Users/user/LiteRT-LM/bazel-bin/c_api"]
+
+[target.aarch64-apple-darwin]
+# Example: Add library search path for macOS ARM64 (Apple Silicon)
+# rustflags = ["-L", "/Users/user/LiteRT-LM/bazel-bin/c_api"]
