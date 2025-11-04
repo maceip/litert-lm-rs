@@ -5,7 +5,16 @@ edition = "2021"
 authors = ["LiteRT-LM Contributors"]
 description = "Rust bindings for LiteRT-LM C API - Engine, Session, and Conversation support"
 license = "Apache-2.0"
-repository = "https://github.com/google-ai-edge/LiteRT-LM"
+repository = "https://github.com/maceip/litert-lm-rs"
+include = [
+    "src/**/*",
+    "c/engine.h",
+    "build.rs",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE",
+    "examples/**/*",
+]
 
 [lib]
 name = "litert_lm"
